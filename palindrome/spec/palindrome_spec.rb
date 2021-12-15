@@ -5,7 +5,9 @@ RSpec.describe Palindrome do
     expect(Palindrome::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe ".x" do
+    it "does something useful" do
+      expect(Palindrome.x).to eq(true)
+    end
   end
 end

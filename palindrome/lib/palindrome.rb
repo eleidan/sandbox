@@ -5,4 +5,8 @@ require_relative "palindrome/version"
 module Palindrome
   class Error < StandardError; end
   # Your code goes here...
+
+  def self.x
+    true
+  end
 end
