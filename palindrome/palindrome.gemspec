@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Palindrome"
   spec.homepage      = "https://github.com/eleidan/sandbox/palindrome"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.3")
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
@@ -35,4 +35,7 @@ Gem::Specification.new do |spec|
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
+  spec.metadata = {
+    "rubygems_mfa_required" => "true"
+  }
 end

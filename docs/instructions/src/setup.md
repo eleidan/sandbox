@@ -139,3 +139,57 @@
     ```
     bundle
     ```
+
+1. Make sure the `palindrome/Gemfile` file is updated as follows:
+    ```diff
+    -
+    -gem "rake", "~> 13.0"
+    -
+    -gem "rspec", "~> 3.0"
+    -
+    -gem "rubocop", "~> 1.7"
+    ```
+
+1. Make sure the `palindrome/palindrome.gemspec` file is updated as follows:
+    ```diff
+    # spec.add_dependency "example-gem", "~> 1.0"
+
+    +  spec.add_development_dependency "rake", "~> 13.0"
+    +  spec.add_development_dependency "rspec", "~> 3.10"
+    +  spec.add_development_dependency "rubocop", "~> 1.7"
+    +
+    # For more information and examples about making a new gem, checkout our
+
+    ```
+
+1. Issue the following command:
+    ```
+    rubocop
+    ```
+
+    An output similar to the following is expected:
+    ```
+    Error: RuboCop found unsupported Ruby version 2.4 in `TargetRubyVersion` parameter (in .rubocop.yml). 2.4-compatible analysis was dropped after version 1.12.
+    Supported versions: 2.5, 2.6, 2.7, 3.0, 3.1
+    ```
+
+1. Make sure the `palindrome/palindrome.gemspec` file is updated as follows:
+    ```diff
+    -  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
+    +  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.3")
+    ```
+
+1. Make sure the `palindrome/.rubocop.yml` file is updated as follows:
+    ```diff
+     AllCops:
+    -  TargetRubyVersion: 2.4
+    +  TargetRubyVersion: 2.7
+    ```
+
+1. Issue the following command to fix possible style errors:
+    ```
+    rubocop -A
+    ```
+
+Refer Bundler official [instructions](https://bundler.io/guides/creating_gem.html)
+for more details on how to create a Ruby gem.
