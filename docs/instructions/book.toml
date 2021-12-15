@@ -1,0 +1,14 @@
+[book]
+authors = ["Oleg Kulyk"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Instructions"
+
+[output.html]
+default-theme = "rust"
+
+[output.html.fold]
+enable = false
+level = 0
+
